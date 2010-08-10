@@ -1,0 +1,9 @@
+
+import sys, os, string, time
+from itertools import *
+
+import readline
+import rlcompleter
+readline.parse_and_bind("tab: complete")
+
+

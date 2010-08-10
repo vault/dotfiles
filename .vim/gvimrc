@@ -1,0 +1,20 @@
+set go-=T
+set go-=R
+set go-=L
+set go-=l
+set go-=r
+set go-=m
+
+"function ToggleFullscreen()
+  "if &fullscreen
+    "set nofullscreen
+    "set transp=8
+  "else
+    "let l:c=&columns
+    "set fullscreen
+    "let &columns=l:c
+    "set transp=0
+  "endif
+"endfunction
+
+"nmap <D-F> :call ToggleFullscreen()<cr>

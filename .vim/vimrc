@@ -1,0 +1,80 @@
+
+" Basics
+  set nocompatible
+  filetype off
+  call pathogen#runtime_append_all_bundles()
+  set ignorecase smartcase
+  set virtualedit=all 
+  syntax enable 
+  filetype plugin on
+  filetype plugin indent on
+  set backup
+  set writebackup
+  set backupdir=~/Documents/backups/
+  set shortmess=aOstT
+  set backspace=start,eol,indent
+  set directory=~/.tmp/
+
+" Indent
+  set autoindent
+  set tabstop=2
+  set shiftwidth=2
+  set expandtab
+  set smartindent
+
+" Display 
+  set incsearch
+  set nowrap
+  set scrolloff=10
+  set sidescroll=10
+  set hlsearch 
+  set noerrorbells
+  "set visualbell t_vb=
+  set novisualbell
+  set showcmd
+  set ruler
+  set number  
+  set shiftround
+  set showmatch
+
+
+" Statusline
+  set laststatus=2
+  set statusline=%n " buffer number
+  set statusline+=\ %-t " tail of filename
+  set statusline+=\ [%{strlen(&fenc)?&fenc:'none'}, " file encoding
+  set statusline+=\ %{&ff}] " file format
+  set statusline+=\ %m%r%h%w%y " flags
+  set statusline+=\ [%l,%v:%L] " line:column
+  set statusline+=\ %P " percent
+
+" GUI 
+if has("gui_running")
+  "set transp=8
+  set gfn=Inconsolata\ Medium\ 9
+  set anti
+  "set fuoptions=maxvert,maxhorz 
+endif
+
+  set cursorline
+  colorscheme zenburn
+
+" Folding 
+  set foldenable
+  set foldmethod=syntax
+  set foldlevel=100
+
+" Plugins
+  set wildmenu
+  let b:delimitMate_expand_cr = 1
+  let b:delimitMate_expand_space = 1
+  let g:SuperTabDefaultCompletionType = 'context'
+  let g:tex_flavor='latex'
+
+" Mappings
+  let mapleader = ","
+  noremap <Space> <C-F>    
+  noremap <S-Space> <C-B>
+  map <F1> <ESC>:NERDTreeToggle<RETURN>
+  map <F2> <ESC>:TlistToggle<RETURN>
+
