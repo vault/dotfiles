@@ -18,6 +18,7 @@ export ZSH_THEME="poem"
 source $ZSH/oh-my-zsh.sh
 source /etc/profile.d/go.sh
 export PATH=~/bin:/usr/local/bin:$PATH
+export PATH=$PATH:/afs/bu.edu/common/IT/matlab/bin
 
 # Customize to your needs...
 
@@ -25,9 +26,19 @@ export PATH=~/bin:/usr/local/bin:$PATH
 if [[ -s /home/michael/.rvm/scripts/rvm ]] ; then source /home/michael/.rvm/scripts/rvm ; fi
 
 
+#export VISUAL=gvim
 export EDITOR=vim
 export TERM=xterm-256color
 export PYTHONSTARTUP=/home/michael/.pythonrc
 
-alias python=bpython
+#alias python=bpython
 alias vi=vim
+alias netcfg='sudo netcfg'
+alias dormup='netcfg Dorm'
+alias buup='netcfg BU'
+alias mntx='sshfs -o workaround=rename enggrid: ~/mnt/x'
+alias mntv='sshfs -o workaround=rename enggrid:/ad/eng/courses ~/mnt/v'
+alias flashdie='killall -KILL npviewer.bin'
+alias pacman='clyde'
+alias scl='sudo clyde'
+alias recon='sudo netcfg reonnect'

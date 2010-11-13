@@ -5,11 +5,17 @@
   call pathogen#runtime_append_all_bundles()
   set ignorecase smartcase
   set virtualedit=all 
+  set textwidth=75
+  set formatoptions=qrn1
   syntax enable 
   filetype plugin on
   filetype plugin indent on
   set backup
+  set hidden
+  set ttyfast
+  set autochdir
   set writebackup
+  set undofile
   set backupdir=~/Documents/backups/
   set shortmess=aOstT
   set backspace=start,eol,indent
@@ -25,17 +31,20 @@
 " Display 
   set incsearch
   set nowrap
-  set scrolloff=10
+  set scrolloff=3
   set sidescroll=10
   set hlsearch 
+  set gdefault
   set noerrorbells
   "set visualbell t_vb=
   set novisualbell
   set showcmd
+  set showmode
   set ruler
   set number  
   set shiftround
   set showmatch
+  set relativenumber
 
 
 " Statusline
@@ -70,6 +79,7 @@ endif
   let b:delimitMate_expand_space = 1
   let g:SuperTabDefaultCompletionType = 'context'
   let g:tex_flavor='latex'
+  set grepprg=grep\ -nH\ $*
 
 " Mappings
   let mapleader = ","
@@ -77,4 +87,15 @@ endif
   noremap <S-Space> <C-B>
   map <F1> <ESC>:NERDTreeToggle<RETURN>
   map <F2> <ESC>:TlistToggle<RETURN>
+  nnoremap / /\v
+  vnoremap / /\v
+  nnoremap <tab> %
+  vnoremap <tab> %
+  inoremap <F1> <ESC>
+  nnoremap <F1> <ESC>
+  vnoremap <F1> <ESC>
+  nnoremap ; :
+  nnoremap <leader><space> :noh<cr>
+  inoremap jj <ESC>
 
+  autocmd BufRead,BufNewFile *.lisp,*.cl,*.clj runtime plugin/rainbowparen.vim 

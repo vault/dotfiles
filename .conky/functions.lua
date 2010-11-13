@@ -7,10 +7,10 @@ bg_default = 0xffffff
 fg_default_alpha = 0.75
 bg_default_alpha = 0.5
 
-graphs = {}
+local graphs = {}
 
-function Ring (s)
-  ensure_settings(s)
+function Ring (settings)
+  ensure_settings(settings)
   assert(s.radius, "radius required")
   s.thickness = s.thickness or s.width or 5
   s.start_angle = s.start_angle or 0
@@ -18,9 +18,7 @@ function Ring (s)
   table.insert(graphs, function (cr)
     local value = get_conky_value(s.name, s.arg)
     local perc = percent(value, s.min, s.max)
-    draw_ring(cr, perc, s.x, s.y, s.radius, s.thickness,
-            s.fg_color, s.fg_alpha, s.bg_color, s.bg_alpha,
-            s.start_angle, s.end_angle)
+    draw_ring(cr, settings)
   end)
 end
 
@@ -30,6 +28,24 @@ end
 
 function Pie (s)
 
+end
+
+function Rect (s)
+
+end
+
+function RoundRect (s)
+
+end
+
+function ensure (settings, value, default)
+  if settings[value] then
+  elseif default then
+    settings[value] = default
+  else
+    return false
+  end
+  return true
 end
 
 function ensure_settings (s)
@@ -50,15 +66,15 @@ function get_conky_value (name, arg)
   return tonumber(str) or 0
 end
 
-function percent(value, min, max)
+function percent (value, min, max)
   return (value - min) / (max - min)
 end
 
-function rgb(colour,alpha)
+function rgb (colour,alpha)
   return ((colour / 0x10000) % 0x100) / 255., ((colour / 0x100) % 0x100) / 255., (colour % 0x100) / 255., alpha
 end
 
-function deg2rad(deg)
+function deg2rad (deg)
  return deg * (2 * math.pi / 360)
 end
 
@@ -81,7 +97,7 @@ end
 
 -- Drawing functions
 
-function draw_ring(cr, per, x, y, rad, w, fgc, fga, bgc, bga, sa, ea)
+function draw_ring (cr, per, x, y, rad, w, fgc, fga, bgc, bga, sa, ea)
 
   -- convert to radians and rotate to top
   local angle_0 = deg2rad(s.start_angle) - math.pi/2
