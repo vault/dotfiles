@@ -1,0 +1,18 @@
+[submodule ".vim/bundle/cocoa.vim"]
+	path = .vim/bundle/cocoa.vim
+	url = http://github.com/msanders/cocoa.vim.git
+[submodule ".vim/bundle/histwin.vim"]
+	path = .vim/bundle/histwin.vim
+	url = http://github.com/chrisbra/histwin.vim.git
+[submodule ".vim/bundle/snipmate.vim"]
+	path = .vim/bundle/snipmate.vim
+	url = http://github.com/msanders/snipmate.vim.git
+[submodule ".vim/bundle/vim-ragtag"]
+	path = .vim/bundle/vim-ragtag
+	url = http://github.com/tpope/vim-ragtag.git
+[submodule ".vim/bundle/vim-speeddating"]
+	path = .vim/bundle/vim-speeddating
+	url = http://github.com/tpope/vim-speeddating.git
+[submodule ".vim/bundle/vim-surround"]
+	path = .vim/bundle/vim-surround
+	url = http://github.com/tpope/vim-surround.git
