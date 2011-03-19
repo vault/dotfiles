@@ -16,11 +16,11 @@ export ZSH_THEME="poem"
 # export DISABLE_LS_COLORS="true"
 
 source $ZSH/oh-my-zsh.sh
-source /etc/profile.d/go.sh
-export PATH=~/bin:/usr/local/bin:$PATH
-export PATH=$PATH:/afs/bu.edu/common/IT/matlab/bin
+#source /etc/profile.d/go.sh
+export PATH=~/bin:/usr/local/bin:/opt/android-ndk:/opt/android-sdk/platform-tools/:$PATH
 
 # Customize to your needs...
+export ANDROID_NDK_ROOT=/opt/anroid-ndk
 
 #set up rvm
 if [[ -s /home/michael/.rvm/scripts/rvm ]] ; then source /home/michael/.rvm/scripts/rvm ; fi
@@ -42,3 +42,4 @@ alias flashdie='killall -KILL npviewer.bin'
 alias pacman='clyde'
 alias scl='sudo clyde'
 alias recon='sudo netcfg reonnect'
+cd

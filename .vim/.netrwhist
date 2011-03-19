@@ -1,5 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_cnt =9
 let g:netrw_dirhist_1='/home/michael'
 let g:netrw_dirhist_2='/tmp/clyde-michael/thunar-vcs-plugin/thunar-vcs-plugin/pkg'
 let g:netrw_dirhist_3='/home/michael/.themes'
+let g:netrw_dirhist_4='/home/michael'
+let g:netrw_dirhist_5='/var/run/dhcpcd/resolv.conf'
+let g:netrw_dirhist_6='/home/michael/Code/androidsubs/jni/freetype'
+let g:netrw_dirhist_7='/home/michael/Code/androidsubs/jni/fontconfig'
+let g:netrw_dirhist_8='/home/michael/Code/andweb'
+let g:netrw_dirhist_9='/home/michael/.xbindkeys_config'

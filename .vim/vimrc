@@ -79,14 +79,13 @@ endif
   let b:delimitMate_expand_space = 1
   let g:SuperTabDefaultCompletionType = 'context'
   let g:tex_flavor='latex'
-  set grepprg=grep\ -nH\ $*
+  set grepprg=egrep\ -nH\ $*
 
 " Mappings
   let mapleader = ","
   noremap <Space> <C-F>    
   noremap <S-Space> <C-B>
-  map <F1> <ESC>:NERDTreeToggle<RETURN>
-  map <F2> <ESC>:TlistToggle<RETURN>
+  nnoremap <F2> <ESC>:TlistToggle<RETURN>
   nnoremap / /\v
   vnoremap / /\v
   nnoremap <tab> %
@@ -96,6 +95,7 @@ endif
   vnoremap <F1> <ESC>
   nnoremap ; :
   nnoremap <leader><space> :noh<cr>
+  nnoremap <leader>, :TlistToggle<RETURN>
   inoremap jj <ESC>
 
   autocmd BufRead,BufNewFile *.lisp,*.cl,*.clj runtime plugin/rainbowparen.vim 
